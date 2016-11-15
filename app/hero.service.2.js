@@ -14,15 +14,7 @@ var HeroService = (function () {
     function HeroService() {
     }
     HeroService.prototype.getHeroes = function () {
-        return Promise.resolve(mock_heroes_1.HEROES);
-    };
-    // See the "Take it slow" appendix
-    HeroService.prototype.getHeroesSlowly = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            return setTimeout(resolve, 2000);
-        }) // delay 2 seconds
-            .then(function () { return _this.getHeroes(); });
+        return mock_heroes_1.HEROES;
     };
     HeroService = __decorate([
         core_1.Injectable(), 
@@ -31,4 +23,4 @@ var HeroService = (function () {
     return HeroService;
 }());
 exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
+//# sourceMappingURL=hero.service.2.js.map
