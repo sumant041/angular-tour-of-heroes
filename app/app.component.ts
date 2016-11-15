@@ -6,7 +6,7 @@ export class Hero {
 }
 
 const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
+  { id: 11, name: 'Mr. Sumant' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
   { id: 14, name: 'Celeritas' },
@@ -51,7 +51,7 @@ const HEROES: Hero[] = [
       width: 15em;
     }
     .heroes li {
-      cursor: pointer;
+      cursor : pointer;
       position: relative;
       left: 0;
       background-color: #EEE;
