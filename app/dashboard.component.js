@@ -9,41 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var hero_service_1 = require('./hero.service');
-var HeroesComponent = (function () {
-    function HeroesComponent(router, heroService) {
-        this.router = router;
+var DashboardComponent = (function () {
+    function DashboardComponent(heroService) {
         this.heroService = heroService;
+        this.heroes = [];
     }
-    HeroesComponent.prototype.getHeroes = function () {
+    DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes()
+            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
-    };
-    HeroesComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
-    HeroesComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
-    };
-    HeroesComponent = __decorate([
+    DashboardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-heroes',
-            templateUrl: 'heroes.component.html',
-            styleUrls: ['heroes.component.css']
+            selector: 'my-dashboard',
+            templateUrl: 'dashboard.component.html',
+            styleUrls: ['dashboard.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-    ], HeroesComponent);
-    return HeroesComponent;
+        __metadata('design:paramtypes', [hero_service_1.HeroService])
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
+exports.DashboardComponent = DashboardComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */
-//# sourceMappingURL=heroes.component.js.map
+//# sourceMappingURL=dashboard.component.js.map
